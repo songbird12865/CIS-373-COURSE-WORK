@@ -14,12 +14,12 @@
         <!-- Internal Javascript -->
         <script type = "text/javascript">
         function validateForm() {
-            let x1 = document.forms["contactForm"] ["name"].value;
+            let x1 = document.forms["contactForm"]["name"].value;
             if (x1 == "") {
                 alert("Name must be filled in");
                 return false;
             }
-            let x2 = document.forms["contactForm"] ["email"].value;
+            let x2 = document.forms["contactForm"]["email"].value;
             if (x2 == "") {
                 alert("Email must be filled in");
                 return false;
@@ -30,12 +30,12 @@
                 alert("You have entered an invalid email address");
                 return false;
             }
-            let x3 = document.forms["contactForm"] ["phone"].value;
+            let x3 = document.forms["contactForm"]["phone"].value;
             if (x3 == "") {
                 alert("Phone must be filled in");
                 return false;
             }
-            let x4 = document.forms["contactForm"] ["message"].value;
+            let x4 = document.forms["contactForm"]["message"].value;
             if (x4 == "") {
                 alert("Message must be filled in");
                 return false;
