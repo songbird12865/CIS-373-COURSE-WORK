@@ -13,6 +13,34 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Internal Javascript -->
         <script type = "text/javascript">
+        function validateForm() {
+            let x1 = document.forms["contactForm"] ["name"].value;
+            if (x1 == "") {
+                alert("Name must be filled in");
+                return false;
+            }
+            let x2 = document.forms["contactForm"] ["email"].value;
+            if (x2 == "") {
+                alert("Email must be filled in");
+                return false;
+            }
+            let mailformat = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+            if (!document.forms["contactForm"]["email"].value.match(mailformat))
+            {
+                alert("You have entered an invalid email address");
+                return false;
+            }
+            let x3 = document.forms["contactForm"] ["phone"].value;
+            if (x3 == "") {
+                alert("Phone must be filled in");
+                return false;
+            }
+            let x4 = document.forms["contactForm"] ["message"].value;
+            if (x4 == "") {
+                alert("Message must be filled in");
+                return false;
+            }
+        }
         function getRadioValue(radio) {
             alert("You selected: " + radio.value);
         }
@@ -42,6 +70,23 @@
             .list-text-color {
                 color: white;
                 font-size:1.3em;
+            }
+            .submit_button {
+            background-color:#4CAF50; /* Green */
+            border: none;
+            color:white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: 0.3s;
+            }
+            .submit_button:hover {
+                opacity: 1
             }
         </style>
     </head>
@@ -223,7 +268,8 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <!--form id="contactForm" action="./php/formSubmit.php" onsubmit="return validateForm()" method="post">-->
+                        <form id="contactForm" action="mailto:instructor@strayer.edu?subject=Request%20for%20Information" onsubmit="return validateForm()" method="post">
                             <!-- Radio buttons will define the visitor's need-->
                              <div>
                                 <p><h5>Please choose a category that best describes your need:</h5></p>
@@ -311,7 +357,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                            <input type="submit" id="btn" class="submit_button" value="Send Email to Instructor">
                         </form>
                     </div>
                 </div>
