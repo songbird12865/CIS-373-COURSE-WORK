@@ -10,84 +10,21 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v6.5.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Internal Javascript -->
         <script type = "text/javascript">
-        function validateForm() {
-            let x1 = document.forms["contactForm"]["name"].value;
-            if (x1 == "") {
-                alert("Name must be filled in");
-                return false;
-            }
-            let x2 = document.forms["contactForm"]["email"].value;
-            if (x2 == "") {
-                alert("Email must be filled in");
-                return false;
-            }
-            let mailformat = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
-            if (!document.forms["contactForm"]["email"].value.match(mailformat))
-            {
-                alert("You have entered an invalid email address");
-                return false;
-            }
-            let x3 = document.forms["contactForm"]["phone"].value;
-            if (x3 == "") {
-                alert("Phone must be filled in");
-                return false;
-            }
-            let x4 = document.forms["contactForm"]["message"].value;
-            if (x4 == "") {
-                alert("Message must be filled in");
-                return false;
-            }
-        }
-        function getRadioValue(radio) {
-            alert("You selected: " + radio.value);
-        }
-        function getCheckboxClick(checkbox) {
-            alert("You selected: " + checkbox.value);
-        }
-        function getMenuSelection(menu) {
-            alert("You selected: " + menu.value)
-        }
-        function getTextboxEntry(textbox) {
-            alert("You entered: " + textbox.value)
-        }
         </script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!--Additional CSS styles added for CIS373-->
+        <link href="css/cis373.css" rel="stylesheet" />
         <style>
-            .parent {
-                text-align: center;
-            }
-            .parent > ul {
-                text-align: left;
-                display: inline-block;
-            }
-            .list-text-color {
-                color: white;
-                font-size:1.3em;
-            }
-            .submit_button {
-            background-color:#4CAF50; /* Green */
-            border: none;
-            color:white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: 0.3s;
-            }
-            .submit_button:hover {
-                opacity: 1
-            }
+        </style>
+        <!-- Internal CSS-->
+        <style>
         </style>
     </head>
     <body id="page-top">
@@ -209,6 +146,13 @@
                     <div class="divider-custom-line"></div>
                 </div>
             </div>
+            <div>
+                <center>
+                    <video width="320" height="240" controls>
+                        source src="./assets/Video/About_Melissa.mp4" type="video/mp4">
+                    </video>
+                </center>
+            </div>
             <div class="parent">
                 <ul>
                     <li><a href="https://www.youversion.com" alt="The Bible"><span class="list-text-color">The Bible Online - Free</span></a></li>
@@ -224,6 +168,47 @@
                 </ul>
             </div>
         </section>
+            <div style="background-color: #0dcaf0; padding: 30px;">
+                <table class="center">
+                    <caption class="caption">Steps to Build Faith</caption>
+                    <tr>
+                        <th>Faith Step</th>
+                        <th>Action Step</th>
+                    </tr>
+                    <tr>
+                        <td>Inquisitive</td>
+                        <td style="text-align: left;">Ask Your Questions</td>
+                    </tr>
+                                        <tr>
+                        <td>Learn</td>
+                        <td style="text-align: left;">Get a Bible</td>
+                    </tr>
+                    <tr>
+                        <td>Pray</td>
+                        <td style="text-align: left;">Talk to God</td>
+                    </tr>
+                    <tr>
+                        <td>Community</td>
+                        <td style="text-align: left;">Find a Church Home</td>
+                    </tr>
+                    <tr>
+                        <td>Build Habits</td>
+                        <td style="text-align: left;">Baby-steps-Daily Practices</td>
+                    </tr>
+                    <tr>
+                        <td>Evaluate</td>
+                        <td style="text-align: left;">Do I See Personal Growth?</td>
+                    </tr>
+                    <tr>
+                        <td>Re-Evaluate</td>
+                        <td style="text-align: left;">Am I Still Learning/Changing?</td>
+                    </tr>
+                    <tr>
+                        <td>Reflection</td>
+                        <td style="text-align: left;">Is My Faith Growing Stronger?</td>
+                    </tr>
+                </table>
+            </div>
 
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
@@ -371,25 +356,25 @@
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Location</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                            PO Box 911226
                             <br />
-                            Clark, MO 65243
+                            Louisville, KY 40242
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/melissa.joyce.5876/"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.x.com/songbird128/"><i class="fab fa-fw fa-x-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/melissa-joyce-21147386/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.tiktok.com/@mellie.joyce/"><i class="fab fa-fw fa-tiktok"></i></a>
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 class="text-uppercase mb-4">About A Closer Walk</h4>
                         <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
+                            A Closer Walk is a free, faith-based website intended to strengthen your faith in the Lord Jesus Christ, Inspired by
+                            <a href="https://www.bible.com">God's Word, the Bible</a>
                             .
                         </p>
                     </div>
@@ -398,7 +383,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+            <div class="container"><small>Copyright &copy; Melissa Joyce March 2026</small></div>
         </div>
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
@@ -602,5 +587,7 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- JavaScript code was added for CIS-373 -->
+         <script src="js/cis373.js"></script>
     </body>
 </html>
