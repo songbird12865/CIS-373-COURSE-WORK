@@ -30,3 +30,12 @@ function validateForm() {
         return false;
     }
 }
+function showContactField(radio) {
+    document.getElementById('email_field').style.display = 'none';
+    document.getElementById('phone_field').style.display = 'none';
+    if (radio.value === 'email') {
+        document.getElementById('email_field').style.display = 'block';
+    } else if (radio.value === 'phone') {
+        document.getElementById('phone_field').style.display = 'block';
+    }
+}

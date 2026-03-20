@@ -41,3 +41,55 @@ table, th, td {
     font-size: 25px;
     padding: 10px;
 }
+#about {
+    padding-bottom: 20rem !important;
+}
+#faith .list-text-color {
+    color: #1a2a4a !important;
+}
+
+#faith table td, #faith table th {
+    color: #1a2a4a !important;
+}
+
+#faith .caption {
+    color: #1a2a4a !important;
+}
+#faith .page-section-heading {
+    color: #1a2a4a !important;
+}
+
+#faith .divider-custom-line {
+    background-color: #1a2a4a !important;
+    border-color: #1a2a4a !important;
+}
+
+#faith .divider-custom-icon {
+    color: #1a2a4a !important;
+}
+#about .page-section-heading {
+    color: #1a3a2a !important;
+}
+
+#about .divider-custom-line {
+    background-color: #1a3a2a !important;
+    border-color: #1a3a2a !important;
+}
+
+#about .divider-custom-icon {
+    color: #1a3a2a !important;
+}
+
+#about .lead {
+    color: #1a3a2a !important;
+}
+
+#about .btn-outline-light {
+    color: #1a3a2a !important;
+    border-color: #1a3a2a !important;
+}
+
+#about .btn-outline-light:hover {
+    background-color: #1a3a2a !important;
+    color: white !important;
+}
