@@ -41,8 +41,7 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <form id="contactForm" action="mailto:instructor@strayer.edu?subject=Request%20for%20Information" onsubmit="return validateForm()" method="post">
-                            <!-- Radio buttons -->
+                        <form id="contactForm" action="https://formspree.io/f/xlgpvqbb" onsubmit="return validateForm()" method="POST">                            <!-- Radio buttons -->
                             <div>
                                 <p><h5>Please choose a category that best describes your need:</h5></p>
                                 <input type="radio" id="info_needed" name="need_type" value="request information" onchange="getRadioValue(this)">
@@ -88,7 +87,7 @@
                             </div>
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <input class="form-control" id="name" type="text" name="name" placeholder="Enter your name..." data-sb-validations="required" />
                                 <label for="name">Full name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
@@ -103,18 +102,18 @@
 
                             <!-- Email input - hidden until selected -->
                             <div class="form-floating mb-3" id="email_field" style="display:none;">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" />
+                                <input class="form-control" id="email" type="email" name="email" placeholder="name@example.com" />
                                 <label for="email">Email address</label>
                             </div>
 
                             <!-- Phone input - hidden until selected -->
                             <div class="form-floating mb-3" id="phone_field" style="display:none;">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" />
+                                <input class="form-control" id="phone" type="tel" name="phone" placeholder="(123) 456-7890" />
                                 <label for="phone">Phone number</label>
                             </div>                           
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message" name="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
@@ -135,7 +134,7 @@
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/melissa.joyce.5876/"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/acloserwalk.org"><i class="fab fa-fw fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="https://www.x.com/songbird128/"><i class="fab fa-fw fa-x-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/melissa-joyce-21147386/"><i class="fab fa-fw fa-linkedin-in"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1" href="https://www.tiktok.com/@mellie.joyce/"><i class="fab fa-fw fa-tiktok"></i></a>
