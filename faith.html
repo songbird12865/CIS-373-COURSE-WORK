@@ -10,6 +10,39 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/cis373.css" rel="stylesheet" />
+        <style>
+            /* Responsive video wrapper */
+            .faith-video {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            .faith-video video {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            /* Responsive card grid */
+            .faith-cards-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                margin-top: 20px;
+            }
+            @media (max-width: 767px) {
+                .faith-cards-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+            @media (min-width: 768px) and (max-width: 991px) {
+                .faith-cards-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -34,6 +67,7 @@
                 </div>
             </div>
         </nav>
+
         <!-- Faith Section-->
         <section class="page-section bg-info text-white mb-0" id="faith" style="padding-top: 8rem;">
             <div class="container">
@@ -43,81 +77,83 @@
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
+
                 <!-- Video - Centered on top -->
                 <div class="text-center mb-5">
                     <p style="color: #00008b; font-style: italic; font-weight: bold;">A message from Mel</p>
-                    <video width="400" height="560" controls playsinline poster="./assets/img/Mellie.jpg" style= "object-fit: cover;">
-                        <source src="./assets/Video/About_Melissa.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <div class="faith-video">
+                        <video controls playsinline poster="./assets/img/Mellie.jpg">
+                            <source src="./assets/Video/About_Melissa.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <div class="mt-3">
                         <a href="https://www.youversion.com" target="_blank" style="color:#1a2a4a; font-weight:700; font-family:'Montserrat',sans-serif; font-size:1.1rem; text-decoration:underline;">
                             <i class="fas fa-bible me-2"></i>Read the Bible Online - Free
                         </a>
                     </div>
-                </div>                 
-                    </video>
                 </div>
-                 <!-- Links - Full Width -->
-                  <div class="row">
-    <div class="col-lg-12">
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
-            
 
-            <!-- Card 1 -->
-            <a href="https://youthvids.com/pursuing-jesus/" target="_blank" style="text-decoration: none;">
-                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
-                    <i class="fas fa-eye" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
-                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">God Sees and Understands You</p>
+                <!-- Links - Full Width -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="faith-cards-grid">
+
+                            <!-- Card 1 -->
+                            <a href="https://youthvids.com/pursuing-jesus/" target="_blank" style="text-decoration: none;">
+                                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
+                                    <i class="fas fa-eye" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
+                                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">God Sees and Understands You</p>
+                                </div>
+                            </a>
+
+                            <!-- Card 2 -->
+                            <a href="https://www.bible.com/videos/27006-the-book-of-job" target="_blank" style="text-decoration: none;">
+                                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
+                                    <i class="fas fa-cross" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
+                                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">When Faith Gets Hard - The Story of Job</p>
+                                </div>
+                            </a>
+
+                            <!-- Card 3 -->
+                            <a href="https://youthvids.com/the-truth-about-discouragement/" target="_blank" style="text-decoration: none;">
+                                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
+                                    <i class="fas fa-heart" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
+                                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">The Truth About Discouragement</p>
+                                </div>
+                            </a>
+
+                            <!-- Card 4 -->
+                            <a href="https://www.youversion.com/stories/a-new-name" target="_blank" style="text-decoration: none;">
+                                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
+                                    <i class="fas fa-star" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
+                                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">'YOU' are Deeply Loved by God</p>
+                                </div>
+                            </a>
+
+                            <!-- Card 5 -->
+                            <a href="https://youthvids.com/our-stories-brian/" target="_blank" style="text-decoration: none;">
+                                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
+                                    <i class="fas fa-hands-praying" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
+                                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">Acceptance - Brian's Story</p>
+                                </div>
+                            </a>
+
+                            <!-- Card 6 -->
+                            <a href="https://www.youtube.com/watch?v=sxkohge4TBQ" target="_blank" style="text-decoration: none;">
+                                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
+                                    <i class="fas fa-person-walking" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
+                                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">What Does it Mean to Follow Jesus?</p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
                 </div>
-            </a>
 
-            <!-- Card 2 -->
-            <a href="https://www.bible.com/videos/27006-the-book-of-job" target="_blank" style="text-decoration: none;">
-                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
-                    <i class="fas fa-cross" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
-                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">When Faith Gets Hard - The Story of Job</p>
-                </div>
-            </a>
-
-            <!-- Card 3 -->
-            <a href="https://youthvids.com/the-truth-about-discouragement/" target="_blank" style="text-decoration: none;">
-                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
-                    <i class="fas fa-heart" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
-                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">The Truth About Discouragement</p>
-                </div>
-            </a>
-
-            <!-- Card 4 -->
-            <a href="https://www.youversion.com/stories/a-new-name" target="_blank" style="text-decoration: none;">
-                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
-                    <i class="fas fa-star" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
-                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">'YOU' are Deeply Loved by God</p>
-                </div>
-            </a>
-
-            <!-- Card 5 -->
-            <a href="https://youthvids.com/our-stories-brian/" target="_blank" style="text-decoration: none;">
-                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
-                    <i class="fas fa-hands-praying" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
-                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">Acceptance - Brian's Story</p>
-                </div>
-            </a>
-
-
-            <!-- Card 6 -->
-            <a href="https://www.youtube.com/watch?v=sxkohge4TBQ" target="_blank" style="text-decoration: none;">
-                <div style="background: linear-gradient(135deg, #1a2a4a, #0dcaf0); border-radius: 12px; padding: 25px 20px; text-align: center;">
-                    <i class="fas fa-person-walking" style="font-size: 2rem; color: #ffc800; margin-bottom: 10px; display: block;"></i>
-                    <p style="color: white; font-weight: 700; font-family: 'Montserrat', sans-serif; margin: 0;">What Does it Mean to Follow Jesus?</p>
-                </div>
-            </a>
-
-        </div>
-    </div>
-</div>
             </div>
         </section>
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">

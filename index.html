@@ -14,10 +14,111 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/cis373.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+        <style>
+            /* Lock navbar to fixed height — prevent shrink on scroll */
+            #mainNav {
+                padding-top: 0.75rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+
+            /* Full-height masthead layout */
+            .masthead {
+                min-height: 100vh;
+                padding-top: 72px; /* offset for fixed navbar — increased to prevent cutoff */
+                display: flex;
+                flex-direction: column;
+            }
+            .masthead-inner {
+                display: flex;
+                align-items: stretch;
+                flex: 1;
+            }
+
+            /* Psalm sidebar */
+            .psalm-col {
+                width: 220px;
+                flex-shrink: 0;
+                padding: 24px 16px 32px 16px;
+                display: flex;
+                flex-direction: column;
+            }
+            .psalm-col p {
+                font-style: italic;
+                font-size: 0.82rem;
+                color: #0f3a2a;
+                line-height: 1.85;
+                margin: 0;
+                text-align: right;
+            }
+            .psalm-label {
+                font-size: 0.65rem;
+                font-weight: 700;
+                color: #0a2a1e;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                margin-bottom: 8px;
+                text-align: center;
+            }
+            .psalm-credit {
+                font-size: 0.65rem;
+                color: #0a2a1e;
+                letter-spacing: 1px;
+                text-align: center;
+                margin-top: 10px;
+                font-style: italic;
+            }
+
+            /* Right margin mirrors left */
+            .right-margin {
+                width: 220px;
+                flex-shrink: 0;
+            }
+
+            /* Main content column */
+            .main-content-col {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                padding: 32px 40px;
+                text-align: center;
+            }
+
+            /* Gold color for heading, quote, ref, divider */
+            .gold-text {
+                color: #996515 !important;
+            }
+            .divider-custom-line {
+                border-color: #996515 !important;
+                background-color: #996515 !important;
+            }
+            .divider-custom-icon {
+                color: #996515 !important;
+            }
+
+            /* Scale up masthead image */
+            .masthead-avatar {
+                max-width: 480px;
+                width: 100%;
+                border-radius: 6px;
+                margin-bottom: 1.5rem !important;
+            }
+
+            /* Responsive: hide psalm col on small screens */
+            @media (max-width: 767px) {
+                .psalm-col, .right-margin {
+                    display: none;
+                }
+                .masthead-avatar {
+                    max-width: 100%;
+                }
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -42,27 +143,76 @@
                 </div>
             </div>
         </nav>
+
         <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Is God Real?</h1>
-                <br><br>
-                <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/CLOSER WALK PIC 1.jpg" alt="..." />
-                <p class="font-weight-light mb-0" style="font-style: italic; font-size: 1.2rem;">"Draw near to God and He will draw near to you."</p> 
-                <p class="font-weight-light mb-4" style="font-size: 1rem; letter-spacing: 2px;">— James 4:8 NIV</p>                              
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
+        <header class="masthead bg-primary text-white">
+            <div class="masthead-inner">
+
+                <!-- Left: Psalm 23 NIV -->
+                <div class="psalm-col">
+                    <div class="psalm-label">Psalm 23 NIV</div>
+                    <p>
+                        The Lord is my shepherd,<br>
+                        I lack nothing.<br><br>
+                        He makes me lie down<br>
+                        in green pastures,<br>
+                        he leads me beside<br>
+                        quiet waters,<br>
+                        he refreshes my soul.<br><br>
+                        He guides me along<br>
+                        the right paths<br>
+                        for his name's sake.<br><br>
+                        Even though I walk<br>
+                        through the darkest valley,<br>
+                        I will fear no evil,<br>
+                        for you are with me;<br>
+                        your rod and your staff,<br>
+                        they comfort me.<br><br>
+                        You prepare a table<br>
+                        before me in the presence<br>
+                        of my enemies.<br>
+                        You anoint my head with oil;<br>
+                        my cup overflows.<br><br>
+                        Surely your goodness and love<br>
+                        will follow me<br>
+                        all the days of my life,<br>
+                        and I will dwell<br>
+                        in the house of the Lord<br>
+                        forever.
+                    </p>
+                    <div class="psalm-credit">— A Psalm of David</div>
                 </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0" style="color: #1a5c3a; font-weight: bold;">The Holy Spirit of God challenges you today to "ask" your questions, "spill" your feelings, and "test" His power to transform your life.</p>
-                <p style="color: #1a5c3a; font-weight: bold">Give Him a chance - I promise that you will not regret it. ~ <span style="font-family: 'Dancing Script', cursive; font-size: 1.5em; font-weight: 700; font-weight: bold">Mel</span></p>
+
+                <!-- Center: main content -->
+                <div class="main-content-col">
+                    <h1 class="masthead-heading text-uppercase mb-0 gold-text">Is God Real?</h1>
+
+                    <img class="masthead-avatar" src="assets/img/CLOSER WALK PIC 1.jpg" alt="Two people praying before a cross at sunset" />
+
+                    <div>
+                        <p class="font-weight-light mb-0 gold-text" style="font-style: italic; font-size: 1.2rem;">"Draw near to God and He will draw near to you."</p>
+                        <p class="font-weight-light mb-0 gold-text" style="font-size: 1rem; letter-spacing: 2px;">— James 4:8 NIV</p>
+                    </div>
+
+                    <!-- Icon Divider -->
+                    <div class="divider-custom divider-light" style="width: 100%; max-width: 460px;">
+                        <div class="divider-custom-line" style="background-color: #996515;"></div>
+                        <div class="divider-custom-icon" style="color: #996515;"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line" style="background-color: #996515;"></div>
+                    </div>
+
+                    <div>
+                        <p class="masthead-subheading font-weight-light mb-0" style="color: #1a5c3a; font-weight: bold;">The Holy Spirit of God challenges you today to "ask" your questions, "spill" your feelings, and "test" His power to transform your life.</p>
+                        <p style="color: #1a5c3a; font-weight: bold; margin-top: 0.5rem;">Give Him a chance - I promise that you will not regret it. ~ <span style="font-family: 'Dancing Script', cursive; font-size: 1.5em; font-weight: 700;">Mel</span></p>
+                    </div>
+                </div>
+
+                <!-- Right: mirror margin -->
+                <div class="right-margin"></div>
+
             </div>
         </header>
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
