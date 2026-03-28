@@ -109,13 +109,30 @@
                 margin-bottom: 1.5rem !important;
             }
 
-            /* Responsive: hide psalm col on small screens */
+            /* Responsive: stack psalm below main content on mobile */
             @media (max-width: 767px) {
-                .psalm-col, .right-margin {
+                .masthead-inner {
+                    flex-direction: column;
+                }
+                .psalm-col {
+                    width: 100%;
+                    padding: 24px 20px 32px;
+                    border-top: 1px solid rgba(255,255,255,0.2);
+                    order: 2;
+                    text-align: center;
+                }
+                .psalm-col p {
+                    text-align: center;
+                }
+                .right-margin {
                     display: none;
                 }
                 .masthead-avatar {
                     max-width: 100%;
+                }
+                .main-content-col {
+                    order: 1;
+                    padding: 24px 20px;
                 }
             }
         </style>
