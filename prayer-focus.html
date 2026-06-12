@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Prayer Focus | A Closer Walk</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <script src="https://use.fontawesome.com/releases/v6.5.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/cis373.css" rel="stylesheet" />
+        <style>
+            body {
+                background-color: #f0f4f8;
+            }
+            .prayer-header-banner {
+                background: linear-gradient(135deg, #1a3a5c 0%, #2e6da4 60%, #4a9fd4 100%);
+                padding: 160px 0 50px;
+                text-align: center;
+            }
+            .prayer-header-banner h1 {
+                font-family: 'Dancing Script', cursive;
+                color: #fff;
+                font-size: 3rem;
+                text-shadow: 1px 3px 8px rgba(0,0,0,0.3);
+                margin-bottom: 8px;
+            }
+            .prayer-header-banner .scripture-banner {
+                color: #d9eeff;
+                font-family: 'Lato', sans-serif;
+                font-size: 1.1rem;
+                font-style: italic;
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 1.6;
+                padding: 0 20px;
+            }
+            .prayer-header-banner .scripture-ref {
+                color: #a8d4f5;
+                font-size: 0.95rem;
+                margin-top: 6px;
+                display: block;
+            }
+            #prayer-focus-section {
+                padding: 60px 0 80px;
+            }
+            .country-header {
+                background: linear-gradient(90deg, #1a3a5c, #2e6da4);
+                color: #fff;
+                border-radius: 12px 12px 0 0;
+                padding: 18px 28px;
+                display: flex;
+                align-items: center;
+                gap: 14px;
+            }
+            .country-header h2 {
+                font-family: 'Dancing Script', cursive;
+                font-size: 2.2rem;
+                margin: 0;
+                line-height: 1.1;
+            }
+            .country-flag {
+                font-size: 2.4rem;
+                line-height: 1;
+            }
+            .country-section {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(30, 80, 140, 0.12);
+                margin-bottom: 56px;
+                overflow: hidden;
+                border: 1px solid #c5d8ef;
+            }
+            .country-intro {
+                padding: 20px 28px;
+                font-family: 'Lato', sans-serif;
+                font-size: 1.02rem;
+                color: #444;
+                background: #f5f9ff;
+                border-bottom: 1px solid #d0e4f7;
+                font-style: italic;
+            }
+            .prayer-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 0;
+            }
+            .prayer-photo-card {
+                position: relative;
+                overflow: hidden;
+                background: #1a1a2e;
+            }
+            .prayer-photo-card img {
+                width: 100%;
+                height: 240px;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.4s ease;
+            }
+            .prayer-photo-card:hover img {
+                transform: scale(1.04);
+            }
+            .photo-caption {
+                background: linear-gradient(to top, rgba(20,40,80,0.92) 0%, rgba(20,40,80,0.5) 60%, transparent 100%);
+                position: absolute;
+                bottom: 0; left: 0; right: 0;
+                padding: 40px 16px 16px;
+                color: #fff;
+                font-family: 'Lato', sans-serif;
+                font-size: 0.88rem;
+                line-height: 1.4;
+            }
+            .photo-caption strong {
+                display: block;
+                font-size: 1.0rem;
+                margin-bottom: 3px;
+                color: #a8d4f5;
+            }
+            .prayer-points {
+                padding: 24px 28px 28px;
+                border-top: 1px solid #d0e4f7;
+            }
+            .prayer-points h4 {
+                color: #1a3a5c;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.0rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 12px;
+            }
+            .prayer-points ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .prayer-points ul li {
+                font-family: 'Lato', sans-serif;
+                font-size: 0.97rem;
+                color: #444;
+                padding: 6px 0 6px 28px;
+                position: relative;
+                border-bottom: 1px dotted #d0e4f7;
+            }
+            .prayer-points ul li:last-child {
+                border-bottom: none;
+            }
+            .prayer-points ul li::before {
+                content: "🙏";
+                position: absolute;
+                left: 0;
+                font-size: 0.85rem;
+            }
+            .section-intro {
+                text-align: center;
+                max-width: 720px;
+                margin: 0 auto 48px;
+                font-family: 'Lato', sans-serif;
+                font-size: 1.05rem;
+                color: #555;
+                line-height: 1.7;
+            }
+            .prayer-divider {
+                text-align: center;
+                font-size: 1.3rem;
+                color: #2e6da4;
+                margin: 12px 0 40px;
+                letter-spacing: 8px;
+            }
+
+            /* Responsive */
+            @media (max-width: 576px) {
+                .prayer-photo-card img { height: 200px; }
+                .country-header h2 { font-size: 1.7rem; }
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/img/acloserwalk-logo.jpg" alt="A Closer Walk Logo" style="height: 40px; width: 40px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
+                    A Closer Walk
+                </a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+                    Menu <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="portfolio.html">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="faith.html">Faith</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="testimonials.html">Testimonials</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="comic-relief.html">Comic Relief</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="motivation.html">Motivation</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded active" href="prayer-focus.html">Prayer Focus</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="monthly-theme.html">Monthly Theme</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <div class="prayer-header-banner">
+            <h1>🌏 Monthly Prayer Focus</h1>
+            <p class="scripture-banner">
+                "How, then, can they call on the one they have not believed in? And how can they believe in the one of whom they have not heard? And how can they hear without someone preaching to them?"
+                <span class="scripture-ref">— Romans 10:14 (NIV)</span>
+            </p>
+        </div>
+
+        <!-- Main Section -->
+        <section id="prayer-focus-section">
+            <div class="container">
+
+                <p class="section-intro">
+                    Each month, A Closer Walk invites you to lift your eyes beyond your neighborhood and pray for the nations. 
+                    This month, we are focusing on <strong>Thailand</strong> and <strong>Vietnam</strong> — 
+                    two beautiful, vibrant nations whose people are deeply loved by God and in need of His light.
+                </p>
+
+                <!-- ===== THAILAND ===== -->
+                <div class="country-section">
+                    <div class="country-header">
+                        <span class="country-flag">🇹🇭</span>
+                        <h2>Thailand — Land of Smiles</h2>
+                    </div>
+                    <p class="country-intro">
+                        Thailand is a nation of golden temples, lush jungles, and warm, welcoming people. 
+                        Approximately 95% of its 70 million citizens practice Buddhism, with less than 1% identifying as Christian. 
+                        Yet God is moving — through missionaries, through underground churches, and through the prayers of His people around the world.
+                    </p>
+                    <div class="prayer-grid">
+                        <div class="prayer-photo-card">
+                            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80"
+                                 alt="Thailand floating market vendors on boats" loading="lazy" />
+                            <div class="photo-caption">
+                                <strong>Floating Market, Central Thailand</strong>
+                                Vendors navigate colorful boats loaded with produce — a scene of everyday life for millions. Each face here is known by God.
+                            </div>
+                        </div>
+                        <div class="prayer-photo-card">
+                            <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=800&q=80"
+                                 alt="Thai rice farmers planting in fields" loading="lazy" />
+                            <div class="photo-caption">
+                                <strong>Rice Farmers, Rural Thailand</strong>
+                                Families work the fields from sunrise to sundown. Pray that the God who waters every harvest would water their hearts too.
+                            </div>
+                        </div>
+                        <div class="prayer-photo-card">
+                            <img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&q=80"
+                                 alt="Hill tribe community Northern Thailand" loading="lazy" />
+                            <div class="photo-caption">
+                                <strong>Hill Tribe Community, Northern Thailand</strong>
+                                Dozens of distinct hill tribe peoples — Akha, Karen, Hmong — live in the mountains, many still waiting to hear the Good News.
+                            </div>
+                        </div>
+                        <div class="prayer-photo-card">
+                            <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80"
+                                 alt="Fishing village coastal southern Thailand" loading="lazy" />
+                            <div class="photo-caption">
+                                <strong>Stilt Fishing Village, Southern Thailand</strong>
+                                Coastal communities built over the water — families whose daily lives revolve around the sea. Pray for the Gospel to reach every shore.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prayer-points">
+                        <h4>🙏 Pray with Us for Thailand</h4>
+                        <ul>
+                            <li>That the Christian community (less than 1%) would multiply and grow bold in sharing their faith openly</li>
+                            <li>For the many hill tribe communities in Northern Thailand who have yet to hear the Gospel in their heart language</li>
+                            <li>For Thai believers who face family rejection and social pressure when they choose to follow Christ — the cultural cost is real</li>
+                            <li>For Thai young people — increasingly connected online — to encounter Jesus through social media and digital ministry</li>
+                            <li>For missionaries and local pastors laboring faithfully in spiritually difficult ground</li>
+                            <li>For God to use the beauty of Thailand's land and people to draw hearts toward their Creator</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="prayer-divider">✝ · · · 🌏 · · · ✝</div>
+
+                <!-- ===== VIETNAM ===== -->
+                <div class="country-section">
+                    <div class="country-header">
+                        <span class="country-flag">🇻🇳</span>
+                        <h2>Vietnam — Where the Gospel is Growing</h2>
+                    </div>
+                    <p class="country-intro">
+                        Vietnam is a nation of stunning beauty — terraced rice fields, ancient cities, and nearly 100 million people. 
+                        The church in Vietnam is growing despite government restrictions, with vibrant communities among ethnic minorities 
+                        and in rapidly growing cities like Ho Chi Minh City and Hanoi. God is moving in Vietnam!
+                    </p>
+                    <div class="prayer-grid">
+                        <div class="prayer-photo-card">
+                            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80"
+                                 alt="Busy Vietnamese street market vendors and shoppers" loading="lazy" />
+                            <div class="photo-caption">
+                                <strong>Street Market, Vietnam</strong>
+                                Markets pulse with life every morning across Vietnam — vendors, families, neighbors. Pray for the Gospel to travel these same streets.
+                            </div>
+                        </div>
+                        <div class="prayer-photo-card">
+                            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80"
+                                 alt="Sapa rice terraces Northern Vietnam" loading="lazy" />
+                            <div class="photo-caption">
+                                <strong>Sapa Rice Terraces, Northern Vietnam</strong>
+                                Breathtaking terraces carved by hand over centuries. The Hmong and Dao people here are among the most responsive to the Gospel in all of Asia.
+                            </div>
+                        </div>
+                        <div class="prayer-photo-card">
+                            <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?w=800&q=80"
+                                 alt="Hmong village community Sapa region Vietnam" loading="lazy" />
+                            <div class="photo-caption">
+                                <strong>Hmong Village, Sapa Region</strong>
+                                Hmong communities in colorful traditional dress — a people with a deep spiritual hunger. Many have come to Christ in recent years.
+                            </div>
+                        </div>
+                        <div class="prayer-photo-card">
+                            <img src="https://images.unsplash.com/photo-1555921015-5532091f6026?w=800&q=80"
+                                 alt="Mekong Delta Vietnam boats river people" loading="lazy" />
+                            <div class="photo-caption">
+                                <strong>Mekong Delta, Southern Vietnam</strong>
+                                Life on the river — millions of families in the Delta depend on these waterways. Just as the disciples once fished, pray workers are sent here.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="prayer-points">
+                        <h4>🙏 Pray with Us for Vietnam</h4>
+                        <ul>
+                            <li>For greater religious freedom — the Vietnamese government requires churches to register with the state, and unregistered congregations — especially among ethnic minorities — face raids, harassment, and forced closures</li>
+                            <li>For the growing house church movement to thrive and remain deeply rooted in Scripture despite pressure</li>
+                            <li>For the Hmong, Dao, and other ethnic minority communities in the mountains where Christianity is spreading rapidly — and where believers face some of the harshest opposition</li>
+                            <li>For the millions of Vietnamese living and working abroad to encounter Christ and carry the Gospel home</li>
+                            <li>For young people in cities like Hanoi and Ho Chi Minh City searching for meaning beyond materialism</li>
+                            <li>For God's protection over pastors and Christian leaders who face surveillance, intimidation, and arrest for their faith</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Closing call to action -->
+                <div class="text-center mt-4 pb-3">
+                    <div style="background: linear-gradient(135deg, #1a3a5c, #2e6da4); border-radius:14px; padding:32px 24px; max-width:650px; margin:0 auto; color:#fff;">
+                        <h3 style="font-family:'Dancing Script',cursive; font-size:2rem; margin-bottom:10px;">Join Us in Prayer</h3>
+                        <p style="font-family:'Lato',sans-serif; font-size:1.02rem; color:#d9eeff; line-height:1.7; margin-bottom:18px;">
+                            The harvest is plentiful, but the workers are few. Your prayer is a real, powerful act of partnership 
+                            with missionaries, pastors, and believers on the ground in Thailand and Vietnam. 
+                            You don't have to go to make a difference — you just have to <em>pray</em>.
+                        </p>
+                        <p style="font-family:'Lato',sans-serif; font-size:0.95rem; color:#a8d4f5; font-style:italic;">
+                            "Therefore pray earnestly to the Lord of the harvest to send out laborers into his harvest." — Matthew 9:38
+                        </p>
+                        <a href="contact.html" class="btn btn-outline-light mt-3">Send a Prayer Request</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">PO Box 911226<br />Louisville, KY 40242</p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/melissa.joyce.5876/"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.x.com/songbird128/"><i class="fab fa-fw fa-x-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/melissa-joyce-21147386/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.tiktok.com/@mellie.joyce/"><i class="fab fa-fw fa-tiktok"></i></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About A Closer Walk</h4>
+                        <p class="lead mb-0">A free, faith-based website intended to strengthen your faith in the Lord Jesus Christ, Inspired by <a href="https://www.bible.com">God's Word, the Bible</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Melissa Joyce 2026</small></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/cis373.js"></script>
+    </body>
+</html>

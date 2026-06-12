@@ -13,72 +13,90 @@
         <link href="css/cis373.css" rel="stylesheet" />
         <style>
             #comic-relief {
-                background-color: #fff8e7 !important;
-                background-image: radial-gradient(circle at 1px 1px, rgba(255, 180, 50, 0.18) 1px, transparent 0);
+                background-color: #fff8e1 !important;
+                background-image:
+                    radial-gradient(circle at 1px 1px, rgba(210, 160, 30, 0.15) 1px, transparent 0);
                 background-size: 28px 28px;
-                min-height: 100vh;
+                padding: 60px 0 80px;
             }
             .comic-card {
-                background: rgba(255, 255, 255, 0.75);
+                background: #fff;
                 border-radius: 16px;
-                padding: 24px 20px 28px 20px;
-                box-shadow: 0 6px 24px rgba(255, 160, 30, 0.28) !important;
-                backdrop-filter: blur(4px);
-                text-align: center;
+                box-shadow: 0 6px 24px rgba(180, 130, 20, 0.18);
+                padding: 28px 22px 22px;
+                margin-bottom: 36px;
+                border: 2px solid #f5d060;
+                transition: transform 0.2s;
+            }
+            .comic-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 32px rgba(180, 130, 20, 0.28);
             }
             .comic-title {
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 700;
-                color: #b8600a;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                font-style: italic;
-                text-align: left;
+                font-family: 'Dancing Script', cursive;
+                font-size: 1.7rem;
+                color: #b8860b;
+                margin-bottom: 8px;
+            }
+            .comic-desc {
+                font-family: 'Lato', sans-serif;
+                font-size: 0.97rem;
+                color: #555;
                 margin-bottom: 14px;
-                font-size: 1rem;
+                font-style: italic;
             }
-            .comic-video {
-                width: 100%;
-                max-width: 340px;
-                height: 480px;
-                object-fit: contain;
+            .video-wrapper {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
                 border-radius: 10px;
-                box-shadow: 0 4px 16px rgba(184, 96, 10, 0.2);
-                background: #000;
+                background: #1a1a1a;
             }
-            .coming-soon-box {
-                width: 100%;
-                max-width: 340px;
-                height: 480px;
+            .video-wrapper video,
+            .video-wrapper iframe {
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                border: none;
                 border-radius: 10px;
-                background: linear-gradient(135deg, #f5c97a, #e8a84a);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto;
-                box-shadow: 0 4px 16px rgba(184, 96, 10, 0.2);
             }
-            .coming-soon-box i { font-size: 3rem; color: white; margin-bottom: 14px; }
-            .coming-soon-box p {
-                color: white;
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 700;
-                font-size: 1rem;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                margin: 0;
+            .page-header-banner {
+                background: linear-gradient(135deg, #b8860b 0%, #d4a017 50%, #f5c842 100%);
+                padding: 130px 0 40px;
+                text-align: center;
+            }
+            .page-header-banner h1 {
+                font-family: 'Dancing Script', cursive;
+                color: #fff;
+                font-size: 3rem;
+                text-shadow: 1px 2px 6px rgba(0,0,0,0.25);
+                margin-bottom: 6px;
+            }
+            .page-header-banner .scripture-banner {
+                color: #fff9e0;
+                font-family: 'Lato', sans-serif;
+                font-size: 1.05rem;
+                font-style: italic;
+            }
+            .snake-divider {
+                text-align: center;
+                font-size: 1.5rem;
+                color: #b8860b;
+                margin: 10px 0 24px;
+                letter-spacing: 6px;
             }
         </style>
     </head>
     <body id="page-top">
+        <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <img src="assets/img/acloserwalk-logo.jpg" alt="A Closer Walk Logo" style="height: 40px; width: 40px; object-fit: cover; border-radius: 50%; margin-right: 10px;">
                     A Closer Walk
                 </a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
                     Menu <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -88,6 +106,7 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="testimonials.html">Testimonials</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded active" href="comic-relief.html">Comic Relief</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="motivation.html">Motivation</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="prayer-focus.html">Prayer Focus</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="monthly-theme.html">Monthly Theme</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="about.html">About</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="contact.html">Contact</a></li>
@@ -96,82 +115,114 @@
             </div>
         </nav>
 
-        <section class="page-section" id="comic-relief" style="padding-top: 8rem;">
+        <!-- Page Header -->
+        <div class="page-header-banner" style="padding-top: 160px;">
+            <h1>😂 Comic Relief 🎭</h1>
+            <p class="scripture-banner">"A cheerful heart is good medicine..." — Proverbs 17:22</p>
+        </div>
+
+        <!-- Comic Relief Section -->
+        <section id="comic-relief">
             <div class="container">
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Comic Relief</h2>
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-laugh-beam"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <div class="text-center mb-5">
-                    <p style="font-family: 'Lato', sans-serif; font-style: italic; font-weight: 700; color: #b8600a; font-size: 1.1rem;">
-                        "A cheerful heart is good medicine, but a crushed spirit dries up the bones." — Proverbs 17:22 NIV
-                    </p>
-                </div>
-                <div class="row g-4 justify-content-center">
+                <p class="text-center lead mb-5" style="color:#7a5c00; font-family:'Lato',sans-serif;">
+                    God has a sense of humor — and so do we! Our biblical comedy reel series brings Scripture to life with a laugh. 
+                    Our sneaky little <strong>serpent</strong> keeps showing up across the stories, connecting them all into one hilarious universe. 🐍
+                </p>
 
-                    <!-- Adam and Eve -->
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <div class="comic-card w-100" style="background: #fde9b8;">
-                            <p class="comic-title">Adam and Eve</p>
-                            <video class="comic-video" controls playsinline>
-                                <source src="./assets/Video/ADAM_AND_EVE.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-
-                    <!-- Poor Jonah -->
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <div class="comic-card w-100" style="background: #fde9b8;">
-                            <p class="comic-title">Poor Jonah</p>
-                            <video class="comic-video" controls playsinline>
-                                <source src="./assets/Video/POOR_JONAH.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-
-                    <!-- Cousin John and the Family Cookout -->
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <div class="comic-card w-100" style="background: #fde9b8;">
-                            <p class="comic-title">Cousin John &amp; the Family Cookout</p>
-                            <video class="comic-video" controls playsinline>
-                                <source src="./assets/Video/COUSIN_JOHN_AND_THE_FAMILY_COOKOUT_-_FINAL_CUT.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-
-                    <!-- Coming Soon Slot -->
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <div class="comic-card w-100" style="background: #fde9b8;">
-                            <p class="comic-title">More Coming Soon</p>
-                            <div class="coming-soon-box">
-                                <i class="fas fa-film"></i>
-                                <p>Stay Tuned!</p>
+                <!-- Comic 1: Adam & Eve -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="comic-card">
+                            <div class="comic-title">🍎 Adam, Eve &amp; the Very Bad Idea</div>
+                            <p class="comic-desc">The original "hold my fig leaf" moment. The serpent, the fruit, the forbidden snack... and a very unexpected Uber driver named Noah. 🚢</p>
+                            <div class="video-wrapper">
+                                <video controls>
+                                    <source src="assets/Video/ADAM_AND_EVE.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+                <div class="snake-divider">🐍 · · · · · 🐍</div>
+
+                <!-- Comic 2: Poor Jonah -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="comic-card">
+                            <div class="comic-title">🐋 Poor Jonah &amp; the Kingdom Uber</div>
+                            <p class="comic-desc">Nineveh had terrible Yelp reviews. Jonah had other plans. God had THE plan. And Kingdom Uber never misses a pickup. 🚕</p>
+                            <div class="video-wrapper">
+                                <video controls>
+                                    <source src="assets/Video/POOR_JONAH.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="snake-divider">🐍 · · · · · 🐍</div>
+
+                <!-- Comic 3: Cousin John -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="comic-card">
+                            <div class="comic-title">🦗 When John the Baptist Is Your Cousin</div>
+                            <p class="comic-desc">Locusts for dinner. A camel hair wardrobe. And a very… enthusiastic cousin who yells in the wilderness. Family reunions were different back then. 😅</p>
+                            <div class="video-wrapper">
+                                <video controls>
+                                    <source src="assets/Video/COUSIN_JOHN_AND_THE_FAMILY_COOKOUT_-_FINAL_CUT.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="snake-divider">🐍 · · · · · 🐍</div>
+
+                <!-- Comic 4: Abraham, Isaac & the Ram — NEW -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="comic-card" style="border-color: #c0392b;">
+                            <div class="comic-title" style="color:#c0392b;">🐏 Abraham, Isaac &amp; the Last-Minute Ram</div>
+                            <p class="comic-desc">
+                                Abraham had faith. Isaac had questions. The ram had absolutely no idea what he was about to walk into. 
+                                And the serpent? <em>Furious</em> — because God used a ram instead of Isaac, and that was NOT what the snake had planned. 🐍😤
+                            </p>
+                            <div class="video-wrapper" style="background:#2c2c2c; display:flex; align-items:center; justify-content:center; position:relative; min-height:220px; border-radius:10px; border: 2px dashed #c0392b;">
+                                <!-- Replace the src below with your actual video filename once created -->
+                                <video controls style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:10px;">
+                                    <source src="assets/Video/ABRAHAM_ISAAC_RAM.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <p style="color:#aaa; font-family:'Lato',sans-serif; font-size:0.9rem; padding:20px; text-align:center; position:relative; z-index:1;">
+                                    🎬 Video coming soon — upload <code>ABRAHAM_ISAAC_RAM.mp4</code> to <code>assets/Video/</code>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
+        <!-- Footer -->
         <footer class="footer text-center">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">911 Ormsby LN<br />Louisville, KY 40242</p>
+                        <p class="lead mb-0">PO Box 911226<br />Louisville, KY 40242</p>
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/acloserwalk.org"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.x.com/acloserwalk_org"><i class="fab fa-fw fa-x-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/acloserwalk_org"><i class="fab fa-fw fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.tiktok.com/@acloserwalk.org"><i class="fab fa-fw fa-tiktok"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/melissa.joyce.5876/"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.x.com/songbird128/"><i class="fab fa-fw fa-x-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/melissa-joyce-21147386/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.tiktok.com/@mellie.joyce/"><i class="fab fa-fw fa-tiktok"></i></a>
                     </div>
                     <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">About A Closer Walk</h4>
@@ -181,7 +232,7 @@
             </div>
         </footer>
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Melissa Joyce March 2026</small></div>
+            <div class="container"><small>Copyright &copy; Melissa Joyce 2026</small></div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
