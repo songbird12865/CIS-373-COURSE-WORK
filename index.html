@@ -135,6 +135,38 @@
                     padding: 24px 20px;
                 }
             }
+
+            /* Daily Bible Verse section */
+            #daily-verse {
+                background-color: #fff8e1;
+                background-image: radial-gradient(circle at 1px 1px, rgba(210, 160, 30, 0.15) 1px, transparent 0);
+                background-size: 28px 28px;
+                padding: 60px 0;
+                text-align: center;
+            }
+            .daily-verse-label {
+                font-size: 0.75rem;
+                font-weight: 700;
+                color: #b8860b;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-bottom: 14px;
+            }
+            .daily-verse-text {
+                font-family: 'Dancing Script', cursive;
+                font-size: 2rem;
+                color: #7a5c00;
+                max-width: 700px;
+                margin: 0 auto 12px;
+                line-height: 1.4;
+            }
+            .daily-verse-ref {
+                font-family: 'Lato', sans-serif;
+                font-size: 1rem;
+                font-style: italic;
+                color: #555;
+                letter-spacing: 1px;
+            }
         </style>
     </head>
     <body id="page-top">
@@ -233,6 +265,15 @@
 
             </div>
         </header>
+
+        <!-- Daily Bible Verse -->
+        <section id="daily-verse">
+            <div class="container">
+                <div class="daily-verse-label">✦ Verse of the Day ✦</div>
+                <p class="daily-verse-text">"I can do all things through Christ who strengthens me."</p>
+                <p class="daily-verse-ref">— Philippians 4:13 NKJV</p>
+            </div>
+        </section>
 
         <!-- Footer-->
         <footer class="footer text-center">
