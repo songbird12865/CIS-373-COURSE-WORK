@@ -169,7 +169,8 @@
 
             /* Born Again Asia mission banner */
             .mission-banner {
-                width: 100%;
+                width: 70%;
+                max-width: 1000px;
                 margin: 0 auto 40px;
                 overflow: hidden;
                 border-radius: 12px;
@@ -177,8 +178,8 @@
 
             .mission-banner img {
                 width: 100%;
-                height: 260px;
-                object-fit: cover;
+                height: auto;
+                /* object-fit: cover; */
                 display: block;
             }
 
@@ -186,7 +187,7 @@
             @media (max-width: 576px) {
                 .prayer-photo-card img { height: 200px; }
                 .country-header h2 { font-size: 1.7rem; }
-                .mission-banner img { height: 160px; }
+                .mission-banner img { width: 100%; }
             }
         </style>
     </head>
