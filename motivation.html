@@ -18,50 +18,121 @@
                 background-size: 28px 28px;
                 min-height: 100vh;
             }
+
+            .motivation-grid {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 24px;
+                align-items: stretch;
+                margin-top: 1.5rem;
+            }
+
             .motivation-card {
-                background: rgba(255, 255, 255, 0.75);
+                background: rgba(255, 255, 255, 0.78);
                 border-radius: 16px;
-                padding: 24px 20px 28px 20px;
-                box-shadow: 0 6px 24px rgba(60, 140, 80, 0.25) !important;
+                box-shadow: 0 6px 22px rgba(60, 140, 80, 0.20);
                 backdrop-filter: blur(4px);
-                text-align: center;
+                overflow: hidden;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                max-width: 325px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .motivation-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 28px rgba(60, 140, 80, 0.28);
+            }
+
+            .motivation-link {
+                display: block;
+                color: inherit;
+                text-decoration: none;
                 height: 100%;
             }
+
+            .thumbnail-wrap {
+                position: relative;
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                overflow: hidden;
+                background: #f5f5f5;
+            }
+
+            .thumbnail-wrap img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                transition: transform 0.25s ease;
+            }
+
+            .motivation-card:hover .thumbnail-wrap img {
+                transform: scale(1.03);
+            }
+
+            .play-button {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 58px;
+                height: 58px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.62);
+                color: #fff;
+                font-size: 1.35rem;
+                border: 2px solid rgba(255, 255, 255, 0.9);
+                pointer-events: none;
+            }
+
+            .motivation-card-body {
+                padding: 16px 16px 18px;
+                text-align: center;
+            }
+
             .motivation-title {
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 700;
                 color: #1a5c2a;
                 text-transform: uppercase;
-                letter-spacing: 2px;
+                letter-spacing: 1px;
                 font-style: italic;
-                text-align: left;
-                margin-bottom: 14px;
-                font-size: 1rem;
+                margin: 0 0 8px;
+                font-size: 0.92rem;
+                line-height: 1.35;
             }
-            .instagram-wrapper {
-                display: flex;
-                justify-content: center;
-                width: 100%;
+
+            .watch-video {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                color: #3c8c50;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 0.78rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
             }
-            .instagram-wrapper .instagram-media {
-                min-width: 100% !important;
-                width: 100% !important;
+
+            @media (max-width: 991.98px) {
+                .motivation-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
             }
-            .fb-wrapper {
-                position: relative;
-                width: 100%;
-                padding-bottom: 100%;
-                height: 0;
-                overflow: hidden;
-                border-radius: 10px;
-                background: #000;
-            }
-            .fb-wrapper iframe {
-                position: absolute;
-                top: 0; left: 0;
-                width: 100%;
-                height: 100%;
-                border: none;
+
+            @media (max-width: 575.98px) {
+                .motivation-grid {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                }
+
+                .motivation-card {
+                    max-width: 300px;
+                }
             }
         </style>
     </head>
@@ -100,115 +171,80 @@
                     <div class="divider-custom-line"></div>
                 </div>
 
-                <!-- Row 1: Videos 1 & 2 -->
-                <div class="row g-4 mb-4">
+                <div class="motivation-grid">
 
-                    <!-- Video 1: Sermon Clip - Southeast Christian Church -->
-                    <div class="col-md-6 d-flex">
-                        <div class="motivation-card w-100">
-                            <p class="motivation-title">Sermon Clip</p>
-                            <div class="instagram-wrapper">
-                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DYc01TNvY1S/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                                    <div style="padding:16px;">
-                                        <a href="https://www.instagram.com/reel/DYc01TNvY1S/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                                            <div style="display:flex; flex-direction:row; align-items:center;">
-                                                <div style="background-color:#F4F4F4; border-radius:50%; flex-grow:0; height:40px; margin-right:14px; width:40px;"></div>
-                                                <div style="display:flex; flex-direction:column; flex-grow:1; justify-content:center;">
-                                                    <div style="background-color:#F4F4F4; border-radius:4px; flex-grow:0; height:14px; margin-bottom:6px; width:100px;"></div>
-                                                    <div style="background-color:#F4F4F4; border-radius:4px; flex-grow:0; height:14px; width:60px;"></div>
-                                                </div>
-                                            </div>
-                                            <div style="padding:19% 0;"></div>
-                                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
-                                                <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg>
-                                            </div>
-                                            <div style="padding-top:8px;">
-                                                <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div>
-                                            </div>
-                                            <div style="padding:12.5% 0;"></div>
-                                        </a>
-                                        <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
-                                            <a href="https://www.instagram.com/reel/DYc01TNvY1S/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Southeast Christian Church (@se.church)</a>
-                                        </p>
-                                    </div>
-                                </blockquote>
+                    <!-- Video 1 -->
+                    <article class="motivation-card">
+                        <a class="motivation-link" href="https://www.instagram.com/reel/DYc01TNvY1S/" target="_blank" rel="noopener noreferrer" aria-label="Watch Sermon Clip on Instagram">
+                            <div class="thumbnail-wrap">
+                                <img src="assets/img/THE-LOOK-OF-GRACE.png" alt="Sermon clip thumbnail">
+                                <span class="play-button" aria-hidden="true"><i class="fas fa-play"></i></span>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 2: Is There Anything Too Hard for God? - Kyle Idleman Facebook Reel -->
-                    <div class="col-md-6 d-flex">
-                        <div class="motivation-card w-100">
-                            <p class="motivation-title">Is There Anything Too Hard for God?</p>
-                            <div class="fb-wrapper">
-                                <iframe
-                                    loading="lazy"
-                                    src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1163024849282690&show_text=false&appId=966242223397117&height=476"
-                                    scrolling="no"
-                                    frameborder="0"
-                                    allowfullscreen="true"
-                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                                </iframe>
+                            <div class="motivation-card-body">
+                                <h3 class="motivation-title">Sermon Clip</h3>
+                                <span class="watch-video"><i class="fab fa-instagram"></i> Watch Video</span>
                             </div>
-                        </div>
-                    </div>
+                        </a>
+                    </article>
 
-                </div><!-- end Row 1 -->
-
-                <!-- Row 2: Videos 3 & 4 -->
-                <div class="row g-4 mb-4">
-
-                    <!-- Video 3: Your Father is Greater -->
-                    <div class="col-md-6 d-flex">
-                        <div class="motivation-card w-100">
-                            <p class="motivation-title">Your Father is Greater</p>
-                            <div class="instagram-wrapper">
-                                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DWOvXgbkb_G/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                                    <div style="padding:16px;">
-                                        <a href="https://www.instagram.com/reel/DWOvXgbkb_G/?utm_source=ig_embed&utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                                            <div style="display:flex; flex-direction:row; align-items:center;">
-                                                <div style="background-color:#F4F4F4; border-radius:50%; flex-grow:0; height:40px; margin-right:14px; width:40px;"></div>
-                                                <div style="display:flex; flex-direction:column; flex-grow:1; justify-content:center;">
-                                                    <div style="background-color:#F4F4F4; border-radius:4px; flex-grow:0; height:14px; margin-bottom:6px; width:100px;"></div>
-                                                    <div style="background-color:#F4F4F4; border-radius:4px; flex-grow:0; height:14px; width:60px;"></div>
-                                                </div>
-                                            </div>
-                                            <div style="padding:19% 0;"></div>
-                                            <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px; padding-top:8px;">View this post on Instagram</div>
-                                            <div style="padding:12.5% 0;"></div>
-                                        </a>
-                                    </div>
-                                </blockquote>
+                    <!-- Video 2 -->
+                    <article class="motivation-card">
+                        <a class="motivation-link" href="https://www.facebook.com/reel/1163024849282690" target="_blank" rel="noopener noreferrer" aria-label="Watch Is There Anything Too Hard for God on Facebook">
+                            <div class="thumbnail-wrap">
+                                <img src="assets/img/IS-ANYTHING-TOO-HARD-FOR-GOD.png" alt="Is There Anything Too Hard for God thumbnail">
+                                <span class="play-button" aria-hidden="true"><i class="fas fa-play"></i></span>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Video 4: God Sees You -->
-                    <div class="col-md-6 d-flex">
-                        <div class="motivation-card w-100">
-                            <p class="motivation-title">God Sees You</p>
-                            <div class="instagram-wrapper">
-                                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DY2001eD89m/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-                                    <div style="padding:16px;">
-                                        <a href="https://www.instagram.com/p/DY2001eD89m/?utm_source=ig_embed&utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                                            <div style="display:flex; flex-direction:row; align-items:center;">
-                                                <div style="background-color:#F4F4F4; border-radius:50%; flex-grow:0; height:40px; margin-right:14px; width:40px;"></div>
-                                                <div style="display:flex; flex-direction:column; flex-grow:1; justify-content:center;">
-                                                    <div style="background-color:#F4F4F4; border-radius:4px; flex-grow:0; height:14px; margin-bottom:6px; width:100px;"></div>
-                                                    <div style="background-color:#F4F4F4; border-radius:4px; flex-grow:0; height:14px; width:60px;"></div>
-                                                </div>
-                                            </div>
-                                            <div style="padding:19% 0;"></div>
-                                            <div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px; padding-top:8px;">View this post on Instagram</div>
-                                            <div style="padding:12.5% 0;"></div>
-                                        </a>
-                                    </div>
-                                </blockquote>
+                            <div class="motivation-card-body">
+                                <h3 class="motivation-title">Is There Anything Too Hard for God?</h3>
+                                <span class="watch-video"><i class="fab fa-facebook-f"></i> Watch Video</span>
                             </div>
-                        </div>
-                    </div>
+                        </a>
+                    </article>
 
-                </div><!-- end Row 2 -->
+                    <!-- Video 3 -->
+                    <article class="motivation-card">
+                        <a class="motivation-link" href="https://www.instagram.com/reel/DWOvXgbkb_G/" target="_blank" rel="noopener noreferrer" aria-label="Watch Your Father is Greater on Instagram">
+                            <div class="thumbnail-wrap">
+                                <img src="assets/img/YOUR-FATHER-IS-GREATER.png" alt="Your Father is Greater thumbnail">
+                                <span class="play-button" aria-hidden="true"><i class="fas fa-play"></i></span>
+                            </div>
+                            <div class="motivation-card-body">
+                                <h3 class="motivation-title">Your Father is Greater</h3>
+                                <span class="watch-video"><i class="fab fa-instagram"></i> Watch Video</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Video 4 -->
+                    <article class="motivation-card">
+                        <a class="motivation-link" href="https://www.instagram.com/p/DY2001eD89m/" target="_blank" rel="noopener noreferrer" aria-label="Watch God Sees You on Instagram">
+                            <div class="thumbnail-wrap">
+                                <img src="assets/img/GOD-SEES-YOU.png" alt="God Sees You thumbnail">
+                                <span class="play-button" aria-hidden="true"><i class="fas fa-play"></i></span>
+                            </div>
+                            <div class="motivation-card-body">
+                                <h3 class="motivation-title">God Sees You</h3>
+                                <span class="watch-video"><i class="fab fa-instagram"></i> Watch Video</span>
+                            </div>
+                        </a>
+                    </article>
+
+
+                      <!-- Video 5 -->
+                    <article class="motivation-card">
+                        <a class="motivation-link" href="https://www.bible.com/47586-ahavah-love/" target="_blank" rel="noopener noreferrer" aria-label="Watch God Sees You on Instagram">
+                            <div class="thumbnail-wrap">
+                                <img src="assets/img/GODS-LOVE-AHAVAH.png" alt="God's Love: Ahavah thumbnail">
+                                <span class="play-button" aria-hidden="true"><i class="fas fa-play"></i></span>
+                            </div>
+                            <div class="motivation-card-body">
+                                <h3 class="motivation-title">God's Love: Ahavah</h3>
+                                <span class="watch-video"><i class="fas fa-play-circle"></i> Watch Video</span>
+                            </div>
+                        </a>
+                    </article>
+                  
+                </div>
 
             </div>
         </section>
@@ -238,14 +274,6 @@
             <div class="container"><small>Copyright &copy; Melissa Joyce March 2026</small></div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var lazyInstagram = document.createElement("script");
-                lazyInstagram.src = "//www.instagram.com/embed.js";
-                lazyInstagram.defer = true;
-                document.body.appendChild(lazyInstagram);
-            });
-        </script>
         <script src="js/scripts.js"></script>
         <script src="js/cis373.js"></script>
     </body>
